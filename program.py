@@ -27,6 +27,5 @@ layer_sizes = (784,64,10)
 net = nn.NeuralNetwork(layer_sizes)
 net.SGD(training_data, 30, 10, 3.0, test_data)
 
-
 end_time = time.time()
 print('Finished in {}s'.format(round(end_time - start_time, 2)))
