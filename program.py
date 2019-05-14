@@ -7,12 +7,9 @@ Created on Sat May 11 18:48:30 2019
 
 import neuralnetwork_example as nn
 import numpy as np
-import matplotlib.pyplot as plt
 import time
 
 start_time = time.time()
-plt.ion()
-plt.show()
 
 with np.load('mnist.npz') as data:
     training_images = data['training_images']
@@ -30,7 +27,6 @@ layer_sizes = (784,64,10)
 net = nn.NeuralNetwork(layer_sizes)
 net.SGD(training_data, 30, 10, 3.0, test_data)
 
-plt.show()
 
 end_time = time.time()
 print('Finished in {}s'.format(round(end_time - start_time, 2)))

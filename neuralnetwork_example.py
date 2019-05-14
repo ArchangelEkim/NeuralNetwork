@@ -6,8 +6,6 @@ Created on Sat May 11 21:57:10 2019
 """
 
 import numpy as np
-import random
-import matplotlib.pyplot as plt
 
 class NeuralNetwork:
 
@@ -16,7 +14,6 @@ class NeuralNetwork:
         weight_shapes = [(a,b) for a,b in zip(layer_sizes[1:], layer_sizes[:-1])]
         self.weights = [np.random.standard_normal(s)/s[1]**.5 for s in weight_shapes]
         self.biases = [np.zeros((s,1)) for s in layer_sizes[1:]]
-        self.fig = plt.imshow(self.weights[0][0].reshape(28,28))
 
     def feedforward(self, a):
         """Return the output of the network if "a" is input."""
@@ -48,9 +45,7 @@ class NeuralNetwork:
                         j, self.evaluate(test_data), n_test))
                 else:
                     print("Epoch {0} complete".format(j))
-                    self.fig.set_array(self.weights[0][0].reshape(28,28))
-                    plt.draw(),
-                    plt.pause(0.1)
+                    
     def update_mini_batch(self, mini_batch, eta):
         """Update the network's weights and biases by applying
         gradient descent using backpropagation to a single mini batch.
