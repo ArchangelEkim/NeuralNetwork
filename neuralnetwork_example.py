@@ -45,7 +45,6 @@ class NeuralNetwork:
                         j, self.evaluate(test_data), n_test))
                 else:
                     print("Epoch {0} complete".format(j))
-                    self.fig.set_array(self.weights[0][0].reshape(28,28))
                     
     def update_mini_batch(self, mini_batch, eta):
         """Update the network's weights and biases by applying
