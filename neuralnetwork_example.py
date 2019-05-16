@@ -6,6 +6,7 @@ Created on Sat May 11 21:57:10 2019
 """
 
 import numpy as np
+import random
 
 class NeuralNetwork:
 
@@ -34,7 +35,7 @@ class NeuralNetwork:
             if test_data: n_test = len(test_data)
             n = len(training_data)
             for j in range(epochs):
-#                random.shuffle(training_data)
+                random.shuffle(training_data)
                 mini_batches = [
                     training_data[k:k+mini_batch_size]
                     for k in range(0, n, mini_batch_size)]
