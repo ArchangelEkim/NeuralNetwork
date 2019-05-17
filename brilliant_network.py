@@ -13,12 +13,12 @@ x = [-1,  0, 10]
 y = [ 1, -1,  1]
 inputs = [np.array(((x),(y))) for x, y in zip(x,y)]
 results = [1, -1, 1]
-outputs = [np.array(((x))) for z in results]
+outputs = [np.array(((z))) for z in results]
 data = [(a,b) for a, b in zip(inputs,outputs)]
 
 
 
-class bNeuralNetwork:
+class ArtificialNN:
     
     def __init__(self, layer_sizes):
 
@@ -28,8 +28,6 @@ class bNeuralNetwork:
 
     def perceptlearn(self, data):
         for x, y in 3*data:
-#            print(x)
-#            print(y)
             if self.indicator(x, y):
                 self.weights += x*y
                 self.biases += y
@@ -40,4 +38,9 @@ class bNeuralNetwork:
             return True
         else:
             return False
+        
+
+class RecurrentNN:
+    
+    def __init__(self, H_0, ):
         
